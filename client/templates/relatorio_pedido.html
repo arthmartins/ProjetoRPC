@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido Confirmado</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1a2b1c;
+            color: #f8f9fa;
+        }
+        .bg-beige {
+            background-color: #f5deb3;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-beige">
+        <a class="navbar-brand" href="#">
+            BookStore <img src="static/bookstore_icon.jpg" width="30" height="30" alt="">
+        </a>
+    </nav>
+    <div class="container mt-5">
+        <h1>Pedido {{ pedido.id }}</h1>
+        <p><strong>ID do Pedido:</strong> {{ pedido.id }}</p>
+        <p><strong>Data:</strong> {{ pedido.data }}</p>
+        <h2>Livros Comprados:</h2>
+        <ul class="list-group">
+            {% for livro in pedido.livros %}
+            <li class="list-group-item bg-dark text-light">
+                <strong>Título:</strong> {{ livro.titulo }}<br>
+                <strong>Quantidade:</strong> {{ livro.quantidade }}<br>
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('menu') }}" class="btn btn-secondary mt-3">Voltar para o Início</a>
+    </div>
+</body>
+</html>

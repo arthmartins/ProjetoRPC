@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisar Livro</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1a2b1c;
+            color: #f8f9fa;
+        }
+        .bg-beige {
+            background-color: #f5deb3;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-beige">
+        <a class="navbar-brand" href="#">
+            BookStore <img src="static/bookstore_icon.jpg" width="30" height="30" alt="">
+        </a>
+    </nav>
+    <div class="container mt-5">
+        <h1>Pesquisar Livro</h1>
+        <form method="POST">
+            <div class="form-group">
+                <input type="text" name="titulo" placeholder="Digite o título do livro" required class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Pesquisar</button>
+        </form>
+
+        {% if livro_nao_encontrado %}
+            <div class="alert alert-warning mt-4">Livro não encontrado</div>
+        {% endif %}
+
+        {% if resultado %}
+            <h2 class="mt-4">Resultados da Pesquisa:</h2>
+            <p><strong>Título:</strong> {{ resultado.titulo }}</p>
+            <p><strong>Autor:</strong> {{ resultado.autor }}</p>
+            <p><strong>Ano:</strong> {{ resultado.ano }}</p>
+            <p><strong>Estoque:</strong> {{ resultado.estoque }}</p>
+            <p><strong>Preço:</strong> R$ {{ resultado.preco }}</p>
+            <p><strong>Descrição:</strong> {{ resultado.descricao }}</p>
+            
+            <form method="POST" action="{{ url_for('add_carrinho') }}">
+                <input type="hidden" name="titulo" value="{{ resultado.titulo }}">
+                <div class="form-group">
+                    <input type="number" name="quantidade" value="1" min="1" max="{{ resultado.estoque }}" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">Adicionar ao Carrinho</button>
+            </form>
+        {% endif %}
+
+        <a href="{{ url_for('menu') }}" class="btn btn-secondary mt-3">Voltar ao Menu</a>
+        <a href="{{ url_for('carrinho') }}" class="btn btn-secondary mt-3">Carrinho</a>
+    </div>
+</body>
+</html>

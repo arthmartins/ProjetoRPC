@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .bg-dark-custom {
+            background-color: #1a2b1c !important; /* Verde escuro */
+        }
+        .bg-secondary-custom {
+            background-color: #2b3a2b !important; /* Verde mais claro */
+        }
+        .bg-contrast {
+            background-color: #2c3e2c !important; /* Verde contrastante */
+        }
+        .bg-beige {
+            background-color: #f5deb3 !important; /* Tom de bege */
+        }
+        .text-light-custom {
+            color: #f8f9fa !important;
+        }
+        .text-beige {
+            color: #1a2b1c !important; /* Verde escuro */
+        }
+    </style>
+</head>
+<body class="bg-dark-custom text-light-custom">
+    <nav class="navbar navbar-light bg-beige">
+        <div class="container text-center">
+            <a class="navbar-brand mx-auto text-beige" href="#">
+                BookStore <img src="static/bookstore_icon.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+            </a>
+        </div>
+    </nav>
+    
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card bg-contrast text-light-custom">
+                    <div class="card-header text-center bg-contrast text-light-custom">
+                        <h1>Registro</h1>
+                    </div>
+                    <div class="card-body bg-contrast text-light-custom">
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="nome">Nome:</label>
+                                <input type="text" id="nome" name="nome" class="form-control bg-secondary-custom text-light-custom" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="text" id="email" name="email" class="form-control bg-secondary-custom text-light-custom" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="senha">Senha:</label>
+                                <input type="password" id="senha" name="senha" class="form-control bg-secondary-custom text-light-custom" required>
+                            </div>
+                            <button type="submit" class="btn btn-success">Registrar</button>
+                        </form>
+                        <p class="mt-3"><a href="{{ url_for('login') }}" class="text-light-custom">Voltar ao login</a></p>
+                        {% with messages = get_flashed_messages() %}
+                          {% if messages %}
+                            <div class="alert alert-info mt-3">
+                              <ul class="mb-0">
+                                {% for message in messages %}
+                                  <li>{{ message }}</li>
+                                {% endfor %}
+                              </ul>
+                            </div>
+                          {% endif %}
+                        {% endwith %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

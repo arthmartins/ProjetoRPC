@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisar Pedido</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1a2b1c;
+            color: #f8f9fa;
+        }
+        .bg-beige {
+            background-color: #f5deb3;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-beige">
+        <a class="navbar-brand" href="#">
+            BookStore <img src="static/bookstore_icon.jpg" width="30" height="30" alt="">
+        </a>
+    </nav>
+    <div class="container mt-5">
+        <h1>Pesquisar Pedido</h1>
+        <form method="POST" action="{{ url_for('pesquisar_pedido') }}">
+            <div class="form-group">
+                <input type="text" name="pedido_id" placeholder="Digite o ID do pedido" required class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Pesquisar</button>
+        </form>
+        <a href="{{ url_for('menu') }}" class="btn btn-secondary mt-3">Voltar ao Menu</a>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="mt-4">
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

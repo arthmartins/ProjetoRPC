@@ -1,0 +1,15 @@
+Arthur Henrique Gomes Martins
+
+De ínicio deve-se instalar os pacotes necessários para o programa, para isso digite:
+pip3 install -r requirements.txt
+
+Inicie o server primeiro estando no diretório ProjetoRPC com o seguinte comando:
+python3 server/server.py
+
+Após isso em outro terminal inicie o client estando no diretório ProjetoRPC com o seguinte comando:
+python3 client/client.py
+
+Agora é só acessar a seguinte URL para acessar o site:
+http://localhost:3000
+
+Para pesquisar o livro, o titulo não deve ter acento

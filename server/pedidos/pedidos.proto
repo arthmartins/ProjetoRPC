@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package pedidos;
+
+service GestaoPedidos {
+  rpc RealizarPedido (RealizarPedidoRequest) returns (RealizarPedidoResponse);
+  rpc RecuperarHistoricoPedidos (HistoricoPedidosRequest) returns (HistoricoPedidosResponse);
+  rpc ObterDetalhesPedido(ObterDetalhesPedidoRequest) returns (ObterDetalhesPedidoResponse);
+}
+
+message RealizarPedidoRequest {
+  string usuario_id = 1;
+  repeated Livro livros = 2;
+}
+
+message RealizarPedidoResponse {
+  string id = 1;
+}
+
+message HistoricoPedidosRequest {
+  string usuario_id = 1;
+}
+
+message Pedido {
+  string id = 1;
+  string usuario_id = 2;
+  repeated Livro livros = 3;
+  string data = 4;
+}
+
+message HistoricoPedidosResponse {
+  repeated Pedido pedidos = 1;
+}
+
+message ObterDetalhesPedidoRequest {
+    string id = 1;
+    string usuario_id = 2; 
+}
+
+message ObterDetalhesPedidoResponse {
+    string id = 1;
+    string data = 2;
+    repeated Livro livros = 3;
+}
+
+message Livro {
+    string titulo = 1;
+    int32 quantidade = 2;
+}

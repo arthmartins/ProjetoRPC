@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package autenticacao;
+
+message RegistrarUsuarioRequest {
+    string nome = 1;
+    string email = 2;
+    string senha = 3;
+}
+
+message RegistrarUsuarioResponse {
+    string id = 1;
+}
+
+message LoginUsuarioRequest {
+    string email = 1;
+    string senha = 2;
+}
+
+message LoginUsuarioResponse {
+    string token = 1;
+}
+
+service AutenticacaoUsuario {
+    rpc RegistrarUsuario(RegistrarUsuarioRequest) returns (RegistrarUsuarioResponse);
+    rpc LoginUsuario(LoginUsuarioRequest) returns (LoginUsuarioResponse);
+}

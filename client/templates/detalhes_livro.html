@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes do Livro</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .bg-dark-custom {
+            background-color: #1a2b1c !important;
+        }
+        .bg-beige {
+            background-color: #f5deb3 !important;
+        }
+        .text-light-custom {
+            color: #f8f9fa !important;
+        }
+    </style>
+</head>
+<body class="bg-dark-custom text-light-custom">
+    <nav class="navbar navbar-light bg-beige">
+        <div class="container text-center">
+            <a class="navbar-brand mx-auto text-beige" href="#">
+                BookStore <img src="static/bookstore_icon.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+            </a>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="card bg-dark text-light-custom">
+            <div class="card-header text-center">
+                <h1>{{ livro.titulo }}</h1>
+            </div>
+            <div class="card-body bg-contrast text-light-custom">
+                <p><strong>Autor:</strong> {{ livro.autor }}</p>
+                <p><strong>Ano:</strong> {{ livro.ano }}</p>
+                <p><strong>Quantidade em Estoque:</strong> {{ livro.estoque }}</p>
+                <p><strong>Preço:</strong> R$ {{ livro.preco }}</p>
+                <p><strong>Descrição:</strong> {{ livro.descricao }}</p>
+                <a href="{{ url_for('catalogo') }}" class="btn btn-secondary">Voltar ao Catálogo</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

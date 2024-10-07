@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package catalogo;
+
+// solicitar informações de um livro
+message ConsultarLivroRequest {
+    string titulo = 1;
+}
+
+// retornar informações de um livro
+message ConsultarLivroResponse {
+    string titulo = 1;
+    string autor = 2;
+    int32 ano = 3;
+    int32 estoque = 4;
+    float preco = 5;
+    string descricao = 6;
+}
+
+message Livro {
+    string titulo = 1;
+    string autor = 2;
+    int32 ano = 3;
+    int32 estoque = 4;
+    float preco = 5;
+    string descricao = 6;
+}
+
+message ListarLivrosRequest {}
+
+message ListarLivrosResponse {
+    repeated Livro livros = 1;
+}
+
+message AtualizarLivroRequest {
+    Livro livro = 1;
+}
+
+service CatalogoLivros {
+    rpc ConsultarLivro(ConsultarLivroRequest) returns (ConsultarLivroResponse);
+    rpc ListarLivros(ListarLivrosRequest) returns (ListarLivrosResponse);
+    rpc ObterDetalhesLivro(ConsultarLivroRequest) returns (ConsultarLivroResponse);
+    rpc AtualizarLivro(AtualizarLivroRequest) returns (google.protobuf.Empty);
+}

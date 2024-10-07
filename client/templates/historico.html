@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Pedidos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1a2b1c;
+            color: #f8f9fa;
+        }
+        .bg-beige {
+            background-color: #f5deb3;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-beige">
+        <a class="navbar-brand" href="#">
+            BookStore <img src="static/bookstore_icon.jpg" width="30" height="30" alt="">
+        </a>
+    </nav>
+    <div class="container mt-5">
+        <h1>Histórico de Pedidos</h1>
+        {% if pedidos %}
+        <ul class="list-group">
+            {% for pedido in pedidos %}
+            <li class="list-group-item bg-dark text-light">
+                <strong>ID do Pedido:</strong> {{ pedido.id }}<br>
+                <strong>Data:</strong> {{ pedido.data }}<br>
+                <strong>Livros:</strong>
+                <ul>
+                    {% for livro in pedido.livros %}
+                    <li>
+                        <strong>Título:</strong> {{ livro.titulo }}<br>
+                        <strong>Quantidade:</strong> {{ livro.quantidade }}<br>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <div class="alert alert-warning text-center">Histórico Vazio</div>
+        {% endif %}
+        <a href="{{ url_for('menu') }}" class="btn btn-secondary mt-3">Voltar para o Início</a>
+    </div>
+</body>
+</html>

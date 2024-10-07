@@ -1,0 +1,15 @@
+Dom Quixote;Miguel de Cervantes;1605;10;30.00;Uma satira atemporal sobre cavalaria, idealismo e a loucura da mente humana.
+Guerra e Paz;Liev Tolstoi;1869;8;45.00;Uma epica narrativa historica sobre amor, perda e a busca pelo sentido da vida na Russia do seculo XIX.
+A Montanha Magica;Thomas Mann;1924;15;8.00;Uma jornada filosofica e psicologica ambientada em um sanatorio nos Alpes Suicos, explorando temas como doenca, morte e o significado da vida.
+Cem Anos de Solidao;Gabriel Garcia Marquez;1967;2;25.00;Um retrato magico e surreal da historia de Macondo, uma cidade ficticia isolada, acompanhada pela saga da familia Buendia.
+Ulisses;James Joyce;1922;6;50.00;Uma obra-prima complexa e experimental que acompanha um dia na vida de Leopold Bloom em Dublin, utilizando o fluxo de consciencia.
+Em Busca do Tempo Perdido;Marcel Proust;1913;9;60.00;Uma jornada introspectiva e sensorial pelas memorias e reflexoes do narrador, explorando o amor, a arte e a passagem do tempo.
+O Senhor dos Aneis;J.R.R. Tolkien;1954;20;90.00;Uma saga epica de fantasia em um mundo magico, onde Frodo Baggins e seus companheiros embarcam em uma missao para destruir o Um Anel e salvar a Terra-media.
+O Hobbit;J.R.R. Tolkien;1937;15;40.00;Uma aventura introdutoria ao universo de O Senhor dos Aneis, onde Bilbo Bolseiro se junta a uma companhia de anoes para recuperar um tesouro de um dragao.
+1984;George Orwell;1949;14;22.00;Um distopico politico que retrata um futuro totalitario sob a vigilancia constante do Grande Irmao.
+A Revolucao dos Bichos;George Orwell;1945;11;20.00;Uma satira alegorica sobre a Revolucao Russa e os perigos do totalitarismo, contada atraves da historia de animais que tomam o controle de uma fazenda.
+Orgulho e Preconceito;Jane Austen;1813;18;28.00;Uma comedia romantica classica que explora as relacoes sociais, o amor e os costumes da Inglaterra do seculo XIX.
+O Grande Gatsby;F. Scott Fitzgerald;1925;13;35.00;Uma historia ambientada na Era do Jazz, explorando temas como riqueza, ilusao e o sonho americano.
+Crime e Castigo;Fiodor Dostoievski;1866;16;42.00;Um thriller psicologico que explora a culpa, a moralidade e a redencao atraves da historia de um jovem assassino atormentado.
+Os Miseraveis;Victor Hugo;1862;20;55.00;Uma obra monumental que acompanha a vida de Jean Valjean, um ex-presidiario em busca de redencao na Franca do seculo XIX.
+O Morro dos Ventos Uivantes;Emily Bronte;1847;12;32.00;Um romance gotico sombrio e apaixonado que explora o amor, a vinganca e a loucura em uma regiao selvagem da Inglaterra.
